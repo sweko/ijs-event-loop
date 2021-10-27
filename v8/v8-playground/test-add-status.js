@@ -7,7 +7,7 @@ console.log(" 64 - Interpreted");
 console.log("128 - Marked for optimization");
 console.log("------------------------------")
 
-const add = (x, y) => x * y;
+const add = (x, y) => x + y;
 
 console.log("Defined, never executed", %GetOptimizationStatus(add));
 
