@@ -24,13 +24,16 @@ for (let index = 0; index < 99000; index++) {
 }
 console.log("Executed hundred thousand and once", %GetOptimizationStatus(add));
 
-add(1.1, 2.2);
-console.log("Executed with reals, just once", %GetOptimizationStatus(add));
+add("one", "two");
+console.log("Executed with strings, just once", %GetOptimizationStatus(add));
 
 %OptimizeFunctionOnNextCall(add)
 console.log("Optimization scheduled", %GetOptimizationStatus(add));
 add(1, 3);
 console.log("Explicitly optimized", %GetOptimizationStatus(add));
+
+add(1.1, 2.2);
+console.log("Executed with reals, just once", %GetOptimizationStatus(add));
 
 %DeoptimizeFunction(add)
 console.log("Explicitly deoptimized", %GetOptimizationStatus(add));
