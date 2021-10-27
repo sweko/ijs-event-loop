@@ -8,6 +8,6 @@ const fibonacci = (number) => {
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("calc").addEventListener("click", () => {
-        document.getElementById("result").textContent = fibonacci(43);
+        document.getElementById("result").textContent = fibonacci(10);
     });
 })
